@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\User\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Auth\AuthenticationException;
 
 class LoginController extends Controller
 {
@@ -37,4 +38,16 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function showLoginForm()
+    {
+        return view('user.auth.login');
+    }
+
+    public function logout()
+    {
+        $this->guard('web')->logout();
+        return redirect()->route('user.login');
+    }
+
 }
