@@ -13,21 +13,24 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // user
 Route::group(['as' => 'user.', 'namespace' => 'user'], function () {
-    // 登録画面
-    Route::get('register', 'Auth\RegisterController@showRegistrationForm');
+    // 登録画面表示
+    Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register.form');
+    // 登録処理
     Route::post('register', 'Auth\RegisterController@register')->name('register');
 
-    // ログイン画面
-    Route::get('login', 'Auth\LoginController@showLoginForm');
+    // ログイン画面表示
+    Route::get('login', 'Auth\LoginController@showLoginForm')->name('login.form');
+    // ログイン処理
     Route::post('login', 'Auth\LoginController@login')->name('login');
-    Route::get('logout', 'Auth\LoginController@logout');
+    // ログアウト
+    Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 
-    // Home画面
+    // Home画面表示
     Route::get('/home', 'HomeController@index')->name('home');
 });

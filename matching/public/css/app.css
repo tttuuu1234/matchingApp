@@ -10933,3 +10933,42 @@ a.text-dark:focus {
   }
 }
 
+.app {
+  width: 900px;
+  margin: 0 auto;
+}
+
+li {
+  list-style: none;
+}
+
+input[type=text]:focus {
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+.container {
+  border: 1px solid #000000;
+  border-radius: 2px;
+  margin: 48px auto 0;
+  width: 400px;
+  padding: 16px;
+}
+
+.form-submit {
+  padding: 8px 24px;
+}
+
+.title {
+  margin-bottom: 24px;
+}
+
+.form-parts {
+  border: 1px solid #000000;
+  border-radius: 3px;
+  margin-bottom: 24px;
+}
+

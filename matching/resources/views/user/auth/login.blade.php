@@ -1,20 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="text-center">
-    <h2 class="login-title">チャットアプリ(仮)</h2>
-    <div class="">
+<div class="container">
+    <div class="form-box">
         <form action="{{ route("user.login") }}" method="POST">
             @csrf
-            <div class="">
+            <div class="form-group">
                 <label for="email">メールアドレス</label>
-                <input type="email" class="form-parts" id="email" name="email" maxlength="255">
+                <input type="email" class="form-control" id="email" name="email" maxlength="255">
             </div>
-            <div class="">
+            <div class="form-group">
                 <label for="password">パスワード</label>
-                <input type="password" class="form-parts" id="password" name="password" minlength="8">
+                <input type="password" class="form-control" id="password" name="password" minlength="8">
             </div>
-            <button type="submit">ログイン</button>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary form-submit">ログイン</button>
+            </div>
         </form>
     </div>
 </div>

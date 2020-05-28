@@ -11,15 +11,14 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ mix('css/user.css') }}">
-    <link rel="stylesheet" href="{{ mix('css/admin.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/user.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}" type="text/css">
 </head>
 <body>
     <div id="app" class="app">
+        @include('user.common.header')
         @yield('content')
     </div>
-    <!-- Scripts -->
-    <script src="{{ mix('js/app.js') }}" defer charset="utf-8"></script>
 </body>
 </html>

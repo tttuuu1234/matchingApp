@@ -71,11 +71,6 @@ class RegisterController extends Controller
         ]);
     }
 
-    protected function showRegistrationForm()
-    {
-        return view('user.auth.register');
-    }
-
     public function register(Request $request)
     {
         $data = $request->all();
@@ -87,5 +82,10 @@ class RegisterController extends Controller
 
         return $this->registered($request, $user)
                         ?: redirect($this->redirectPath());
+    }
+
+    public function showRegistrationForm()
+    {
+        return view('user.auth.register');
     }
 }

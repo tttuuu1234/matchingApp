@@ -1,16 +1,18 @@
 <template>
   <div>
-    <Header></Header>
-    
+    <router-view></router-view>
+    <p>Home</p>
+    <button @click="toUsers()">Usersへいくぜ</button>
   </div>
 </template>
 
 <script>
-import Header from './HeaderComponent'
 
 export default {
-  components: {
-    Header
+  methods: {
+    toUsers() {
+      this.$router.push("/users/1")
+    }
   }
 }
 </script>
