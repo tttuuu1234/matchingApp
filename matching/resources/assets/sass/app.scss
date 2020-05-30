@@ -28,7 +28,7 @@ button:focus {
 .container {
 	border: 1px solid #000000;
 	border-radius: 2px;
-	margin: 48px auto 0;
+	margin: 32px auto 0;
 	width: 400px;
 	padding: 16px;
 }
@@ -37,14 +37,25 @@ button:focus {
 	&-submit {
 		padding: 8px 24px;
 	}
+	&-parts {
+		border: 1px solid #000000;
+		border-radius: 3px;
+		margin-bottom: 24px;	
+	}
 }
 
 .title {
 	margin-bottom: 24px;
 }
 
-.form-parts {
-	border: 1px solid #000000;
-	border-radius: 3px;
-	margin-bottom: 24px;
+.strong {
+	color: red;
+}
+
+.error {
+	&-message {
+		color: red;
+		font-size: 12px;
+		margin-left: 16px;
+	}
 }
