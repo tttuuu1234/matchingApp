@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Log;
 
 class RegisterTest extends TestCase
 {
-    use RefreshDatabase;
+    // use RefreshDatabase;
 
     /**
      * テストが実行される前に最初に行われる
@@ -47,7 +47,7 @@ class RegisterTest extends TestCase
         ]);
 
         // home画面にリダイレクト
-        $response->assertRedirect('/home');
+        $response->assertRedirect('/');
     }
 
 

@@ -12,7 +12,15 @@
             </nav>
         @endguest
         @auth
-            <a href="{{ route('user.logout') }}">ログアウト</a>
+        <div id="profile">
+            <div class="user-header-profile">
+                <i class="fas fa-user profile-icon"></i>
+            </div>
+            <ul class="dropdown-lists">
+                <li class="dropdown-list"><a href="{{ route('user.logout') }}">ログアウト</a></li>
+                <li class="dropdown-list"><a href="{{ route('user.profile') }}">プロフィール</a></li>
+            </ul>
+        </div>
         @endauth
     </div>
 </header>

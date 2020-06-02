@@ -32,5 +32,8 @@ Route::group(['as' => 'user.', 'namespace' => 'user'], function () {
     Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 
     // Home画面表示
-    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/', 'HomeController@index')->name('home');
+
+    // profile画面表示
+    Route::get('/profile', 'ProfileController@index')->name('profile');
 });

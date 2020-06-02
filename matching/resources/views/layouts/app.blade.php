@@ -14,10 +14,14 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/user.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}" type="text/css">
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="{{ asset('js/custom.js') }}"></script>
 </head>
 <body>
     <div id="app" class="app">
         @include('user.common.header')
+        @include('user.common.headerLists')
         @yield('content')
     </div>
 </body>

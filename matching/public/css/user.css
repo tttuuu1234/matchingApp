@@ -5,3 +5,28 @@
   align-items: center;
 }
 
+.user-header-lists {
+  padding-left: 0;
+  margin-bottom: 0;
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.user-header-profile {
+  font-size: 40px;
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-lists {
+  display: none;
+  position: absolute;
+  right: 3%;
+}
+
+.dropdown-list {
+  font-size: 12px;
+}
+

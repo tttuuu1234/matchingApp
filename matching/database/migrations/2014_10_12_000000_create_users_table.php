@@ -18,6 +18,8 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->integer('report_count')->nullable()->comment('通報回数');
+            $table->integer('suspended')->nullable()->comment('凍結flag');
             $table->rememberToken();
             $table->timestamps();
         });

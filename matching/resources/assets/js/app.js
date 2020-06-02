@@ -4,21 +4,21 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+// require('./bootstrap');
 
-window.Vue = require('vue');
+// window.Vue = require('vue');
 
-import Vuetify from 'vuetify';
-import 'vuetify/dist/vuetify.min.css';
-import Axios from 'axios';
-import VueAxios from 'vue-axios';
-import Vuex from 'vuex';
-import router from "./router";
-import store from "./store/";
+// import Vuetify from 'vuetify';
+// import 'vuetify/dist/vuetify.min.css';
+// import Axios from 'axios';
+// import VueAxios from 'vue-axios';
+// import Vuex from 'vuex';
+// import router from "./router";
+// import store from "./store/";
 
-Vue.use(Vuetify);
-Vue.use(VueAxios, Axios);
-Vue.use(Vuex);
+// Vue.use(Vuetify);
+// Vue.use(VueAxios, Axios);
+// Vue.use(Vuex);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -44,8 +44,8 @@ Vue.use(Vuex);
 //     next();
 // })
 
-const app = new Vue({
-    el: '#app',
-    router,
-    store
-});
+// const app = new Vue({
+//     el: '#app',
+//     router,
+//     store
+// });

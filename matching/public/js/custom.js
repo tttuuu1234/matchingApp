@@ -81,110 +81,40 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/assets/js/app.js":
-/*!************************************!*\
-  !*** ./resources/assets/js/app.js ***!
-  \************************************/
+/***/ "./resources/assets/js/custom.js":
+/*!***************************************!*\
+  !*** ./resources/assets/js/custom.js ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-// require('./bootstrap');
-// window.Vue = require('vue');
-// import Vuetify from 'vuetify';
-// import 'vuetify/dist/vuetify.min.css';
-// import Axios from 'axios';
-// import VueAxios from 'vue-axios';
-// import Vuex from 'vuex';
-// import router from "./router";
-// import store from "./store/";
-// Vue.use(Vuetify);
-// Vue.use(VueAxios, Axios);
-// Vue.use(Vuex);
-
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-// router.beforeEach((to, from, next) => {
-//     console.log('global')
-//     if (to.path === '/users/1') {
-//         next('/')
-//     }
-//     next();
-// })
-// const app = new Vue({
-//     el: '#app',
-//     router,
-//     store
-// });
+$(function () {
+  $('#profile').click(function () {
+    if ($(this).attr('class') == 'clicked') {
+      $(this).removeClass('clicked');
+      $('.dropdown-lists').slideUp('fast');
+    } else {
+      $(this).addClass('clicked');
+      $('.dropdown-lists').slideDown('fast');
+    }
+  });
+});
 
 /***/ }),
 
-/***/ "./resources/assets/sass/admin.scss":
-/*!******************************************!*\
-  !*** ./resources/assets/sass/admin.scss ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/assets/sass/app.scss":
-/*!****************************************!*\
-  !*** ./resources/assets/sass/app.scss ***!
-  \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/assets/sass/user.scss":
-/*!*****************************************!*\
-  !*** ./resources/assets/sass/user.scss ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 0:
-/*!************************************************************************************************************************************************!*\
-  !*** multi ./resources/assets/js/app.js ./resources/assets/sass/app.scss ./resources/assets/sass/user.scss ./resources/assets/sass/admin.scss ***!
-  \************************************************************************************************************************************************/
+/***/ 1:
+/*!*********************************************!*\
+  !*** multi ./resources/assets/js/custom.js ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/MARI/Aplication/matching_app/matching/resources/assets/js/app.js */"./resources/assets/js/app.js");
-__webpack_require__(/*! /Users/MARI/Aplication/matching_app/matching/resources/assets/sass/app.scss */"./resources/assets/sass/app.scss");
-__webpack_require__(/*! /Users/MARI/Aplication/matching_app/matching/resources/assets/sass/user.scss */"./resources/assets/sass/user.scss");
-module.exports = __webpack_require__(/*! /Users/MARI/Aplication/matching_app/matching/resources/assets/sass/admin.scss */"./resources/assets/sass/admin.scss");
+module.exports = __webpack_require__(/*! /Users/MARI/Aplication/matching_app/matching/resources/assets/js/custom.js */"./resources/assets/js/custom.js");
 
 
 /***/ })
