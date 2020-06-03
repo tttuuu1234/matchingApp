@@ -20,6 +20,20 @@
   cursor: pointer;
 }
 
+.user-profile-container {
+  margin: 56px auto 0;
+  width: 400px;
+}
+
+.user-profile-form-parts {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.user-profile-form-checkbox {
+  height: 20px;
+}
+
 .dropdown-lists {
   display: none;
   position: absolute;

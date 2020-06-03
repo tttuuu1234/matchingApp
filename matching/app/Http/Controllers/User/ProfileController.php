@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Prefecture;
 
 class ProfileController extends Controller
 {
@@ -12,10 +13,24 @@ class ProfileController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function getPrefectures()
     {
-        return view('user.profile');
+        $prefecture = new Prefecture();
+        $prefectures = $prefecture->all();
+
+        return $prefectures;
     }
 
-    
+    public function index()
+    {
+        $prefectures = $this->getPrefectures();
+        return view('user.profile', compact('prefectures'));
+    }
+
+    public function store()
+    {
+        
+    }
+
+
 }

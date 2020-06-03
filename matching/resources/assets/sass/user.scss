@@ -18,6 +18,21 @@
             cursor: pointer;
         }
     }
+    &-profile {
+        &-container {
+            margin: 56px auto 0;
+            width: 400px;
+        }
+        &-form {
+            &-parts {
+                margin:  0 auto;
+                width: 50%;
+            }
+            &-checkbox {
+                height: 20px;
+            }
+        }
+    }
 }
 .dropdown {
     &-lists {
