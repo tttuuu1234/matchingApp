@@ -7,11 +7,11 @@ interface ProfileRepositortInterface
 
     /**
      * profile取得
-     * @param integer $id
+     * @param integer $userId
      *
      * @return object
      */
-    public function getProfile($id);
+    public function getProfile($userId);
 
     /**
      * profile作成
@@ -22,8 +22,8 @@ interface ProfileRepositortInterface
     /**
      * profile更新
      * @param array $inputs
-     * @param integer $id
+     * @param integer $userId
      */
-    public function update($inputs, $id);
+    public function update($inputs, $userId);
 
 }

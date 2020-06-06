@@ -18,18 +18,18 @@ class ProfileController extends Controller
         $this->middleware('auth');
     }
 
-    public function show($id)
+    public function show($userId)
     {
-        $profile = ProfileService::getProfile($id);
+        $profile = ProfileService::getProfile($userId);
 
-        return view('user.show', compact('profile'));
+        return view('user.profile.show', compact('profile'));
     }
 
     public function create()
     {
         $prefectures = ProfileService::getPrefectures();
         $ages = $this->getAges();
-        return view('user.profile', compact('prefectures', 'ages'));
+        return view('user.profile.create', compact('prefectures', 'ages'));
     }
 
     public function store(ProfileValidation $request)
@@ -39,18 +39,18 @@ class ProfileController extends Controller
         return redirect()->route('user.home');
     }
 
-    public function edit($id)
+    public function edit($userId)
     {
-        $profile = ProfileService::getProfile($id);
+        $profile = ProfileService::getProfile($userId);
         $prefectures = ProfileService::getPrefectures();
         $ages = $this->getAges();
 
-        return view('user.edit', compact('profile', 'prefectures', 'ages'));
+        return view('user.profile.edit', compact('profile', 'prefectures', 'ages'));
     }
 
-    public function update(ProfileValidation $request, $id)
+    public function update(ProfileValidation $request, $userId)
     {
-        ProfileService::update($request->all(), $id);
+        ProfileService::update($request->all(), $userId);
 
         return redirect()->route('user.home');
     }

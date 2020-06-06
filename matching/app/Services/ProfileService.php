@@ -19,13 +19,13 @@ class ProfileService
 
     /**
      * profile取得
-     * @param integer $id
+     * @param integer $userId
      *
      * @return object
      */
-    public function getProfile($id)
+    public function getProfile($userId)
     {
-        $profile = $this->profile_rep_if->getProfile($id);
+        $profile = $this->profile_rep_if->getProfile($userId);
 
         if(empty($profile)) {
             $profile = [
@@ -49,11 +49,11 @@ class ProfileService
     /**
      * profile更新
      * @param array $inputs
-     * @param integer $id
+     * @param integer $userId
      */
-    public function update($inputs, $id)
+    public function update($inputs, $userId)
     {
-        $this->profile_rep_if->update($inputs, $id);
+        $this->profile_rep_if->update($inputs, $userId);
     }
 
     /**

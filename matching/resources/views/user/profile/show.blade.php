@@ -4,7 +4,7 @@
     <div class="">
         @if (isset($profile['unknown']))
             <p>{{ $profile['unknown'] }}</p>
-            <a href="{{ route('user.profile') }}">profile作成</a>
+            <a href="{{ route('user.profile.create') }}">profile作成</a>
         @else
             <div class="">
                 <p>{{ $profile->name }}</p>

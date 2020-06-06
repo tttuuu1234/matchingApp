@@ -6,17 +6,18 @@ use App\Models\{Profile, User};
 
 class ProfileRepository implements ProfileRepositortInterface
 {
+    protected $user;
     protected $profile;
 
-    public function __construct(Profile $profile)
+    public function __construct(User $user, Profile $profile)
     {
+        $this->user = $user;
         $this->profile = $profile;
     }
 
-    public function getProfile($id)
+    public function getProfile($userId)
     {
-        $user = new User();
-        $user = $user->find($id);
+        $user = $this->user->find($userId);
         $profile = $user->profile;
 
         return $profile;
@@ -36,9 +37,11 @@ class ProfileRepository implements ProfileRepositortInterface
         ]);
     }
 
-    public function update($inputs, $id)
+    public function update($inputs, $userId)
     {
-        $profile = $this->profile->find($id);
+        $user = $this->user->find($userId);
+        $profile = $user->profile;
+
         $profile->update([
             'name' => $inputs['name'],
             'prefecture_id' => $inputs['prefecture'],

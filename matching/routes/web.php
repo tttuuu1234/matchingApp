@@ -34,15 +34,16 @@ Route::group(['as' => 'user.', 'namespace' => 'user'], function () {
     // Home画面表示
     Route::get('/', 'HomeController@index')->name('home');
 
-    // profile詳細画面表示
-    Route::get('profile/{id}', 'ProfileController@show')->name('profile.show');
-    // profile登録画面表示
-    Route::get('profile', 'ProfileController@create')->name('profile');
-    // profile登録
-    Route::post('profile', 'ProfileController@store')->name('profile');
-    // profile編集画面表示
-    Route::get('profile/{id}/edit', 'ProfileController@edit')->name('profile.edit');
-    // profile更新
-    Route::put('profile/{id}', 'ProfileController@update')->name('profile');
-
+    Route::group(['prefix' => 'user/'], function () {
+        // profile詳細画面表示
+        Route::get('{user_id}/profile', 'ProfileController@show')->name('profile.show');
+        // profile登録画面表示
+        Route::get('profile', 'ProfileController@create')->name('profile.create');
+        // profile登録
+        Route::post('profile', 'ProfileController@store')->name('profile.store');
+        // profile編集画面表示
+        Route::get('{user_id}/profile/edit', 'ProfileController@edit')->name('profile.edit');
+        // profile更新
+        Route::put('{user_id}/profile', 'ProfileController@update')->name('profile.update');
+    });
 });
