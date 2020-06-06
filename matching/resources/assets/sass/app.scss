@@ -1,0 +1,66 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.app {
+	width: 900px;
+	margin: 0 auto;
+}
+
+ul {
+	padding-left: 0;
+	margin-bottom: 0;
+}
+
+li {
+	list-style: none;
+}
+
+input[type="text"]:focus{
+	outline: none;
+}
+
+button:focus {
+	outline: none;
+}
+
+
+.container {
+	border: 1px solid #000000;
+	border-radius: 2px;
+	margin: 32px auto 0;
+	width: 400px;
+	padding: 16px;
+}
+
+.form {
+	&-submit {
+		padding: 8px 24px;
+	}
+	&-parts {
+		border: 1px solid #000000;
+		border-radius: 3px;
+		margin-bottom: 24px;	
+	}
+}
+
+.title {
+	margin-bottom: 24px;
+}
+
+.strong {
+	color: red;
+}
+
+.error {
+	&-message {
+		color: red;
+		font-size: 12px;
+		margin-left: 16px;
+	}
+}

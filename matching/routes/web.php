@@ -11,6 +11,39 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+use Illuminate\Support\Facades\Route;
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// user
+Route::group(['as' => 'user.', 'namespace' => 'user'], function () {
+    // 登録画面表示
+    Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register.form');
+    // 登録処理
+    Route::post('register', 'Auth\RegisterController@register')->name('register');
+
+    // ログイン画面表示
+    Route::get('login', 'Auth\LoginController@showLoginForm')->name('login.form');
+    // ログイン処理
+    Route::post('login', 'Auth\LoginController@login')->name('login');
+    // ログアウト
+    Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+
+    // Home画面表示
+    Route::get('/', 'HomeController@index')->name('home');
+
+    Route::group(['prefix' => 'user/'], function () {
+        // profile詳細画面表示
+        Route::get('{user_id}/profile', 'ProfileController@show')->name('profile.show');
+        // profile登録画面表示
+        Route::get('profile', 'ProfileController@create')->name('profile.create');
+        // profile登録
+        Route::post('profile', 'ProfileController@store')->name('profile.store');
+        // profile編集画面表示
+        Route::get('{user_id}/profile/edit', 'ProfileController@edit')->name('profile.edit');
+        // profile更新
+        Route::put('{user_id}/profile', 'ProfileController@update')->name('profile.update');
+    });
 });

@@ -1,0 +1,45 @@
+.user {
+    &-header {
+        padding-top: 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &-lists {
+            padding-left: 0;
+            margin-bottom: 0;
+            margin-top: 24px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        &-profile {
+            font-size: 40px;
+            position: relative;
+            cursor: pointer;
+        }
+    }
+    &-profile {
+        &-container {
+            margin: 56px auto 0;
+            width: 400px;
+        }
+        &-form {
+            &-parts {
+                margin:  0 auto;
+                width: 50%;
+            }
+            &-checkbox {
+                height: 20px;
+            }
+        }
+    }
+}
+.dropdown {
+    &-lists {
+        display: none;
+        position: absolute;
+    }
+    &-list {
+        font-size: 12px;
+    }
+}
