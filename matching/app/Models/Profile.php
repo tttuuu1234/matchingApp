@@ -8,6 +8,7 @@ class Profile extends Model
 {
     protected $fillable = [
         'name',
+        'age',
         'sex',
         'profile',
         'matching_age_from',
@@ -16,4 +17,9 @@ class Profile extends Model
         'prefecture_id',
         'user_id'
     ];
+
+    public function prefecture()
+    {
+        return $this->belongsTo(Prefecture::class);
+    }
 }

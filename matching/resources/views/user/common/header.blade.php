@@ -1,5 +1,7 @@
 <header class="user-header">
-    <h1>トッチャー</h1>
+    <h1>
+        <a href="{{ route('user.home') }}">トッチャー</a>
+    </h1>
     <div>
         @guest
             <nav class="d-flex">
@@ -18,7 +20,7 @@
             </div>
             <ul class="dropdown-lists">
                 <li class="dropdown-list"><a href="{{ route('user.logout') }}">ログアウト</a></li>
-                <li class="dropdown-list"><a href="{{ route('user.profile') }}">プロフィール</a></li>
+                <li class="dropdown-list"><a href="{{ route('user.profile.show',[Auth::id()]) }}">プロフィール</a></li>
             </ul>
         </div>
         @endauth
