@@ -4,7 +4,7 @@
         <a href="#">タイムライン</a>
     </li>
     <li class="user-header-list">
-        <a href="#">ユーザー検索</a>
+        <a href="{{ route('user.index') }}">会員一覧</a>
     </li>
     <li class="user-header-list">
         <a href="#">チャット</a>

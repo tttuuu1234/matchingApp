@@ -1,4 +1,7 @@
 .user {
+    &-back-color {
+        background-color: #9932cc;
+    }
     &-header {
         padding-top: 24px;
         display: flex;
@@ -12,28 +15,68 @@
             justify-content: space-around;
             align-items: center;
         }
+        &-contents {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 150px;
+        }
         &-profile {
             font-size: 40px;
             position: relative;
             cursor: pointer;
         }
+        &-search {
+            font-size: 40px;
+            cursor: pointer;
+        }
     }
-    &-profile {
+    &-form {
+        &-search {
+            &-container {
+                width: 400px;
+            }
+        }
         &-container {
             margin: 56px auto 0;
             width: 400px;
         }
-        &-form {
-            &-parts {
-                margin:  0 auto;
-                width: 50%;
-            }
-            &-checkbox {
-                height: 20px;
-            }
+        &-parts {
+            margin:  0 auto;
+            width: 50%;
+        }
+        &-checkbox {
+            height: 20px;
         }
     }
 }
+
+.modal {
+    background-color:rgba(128,128,128,0.25);
+    &-header {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+    }
+    &-contents {
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: #f5f5f5;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &-close {
+        position: absolute;
+        font-size: 1.575rem;
+        top: 15%;
+        left: 15%;
+        cursor: pointer;
+    }
+}
+
 .dropdown {
     &-lists {
         display: none;

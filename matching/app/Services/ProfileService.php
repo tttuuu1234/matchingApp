@@ -19,7 +19,7 @@ class ProfileService
 
     /**
      * profile取得
-     * @param integer $userId
+     * @param string $userId
      *
      * @return object
      */
@@ -49,7 +49,7 @@ class ProfileService
     /**
      * profile更新
      * @param array $inputs
-     * @param integer $userId
+     * @param string $userId
      */
     public function update($inputs, $userId)
     {

@@ -9,3 +9,12 @@ $(function() {
     }
   })
 })
+
+$(function() {
+  $('#modal-open').click(function() {
+    $('#modal').show();
+  })
+  $('#modal-close').click(function() {
+    $('#modal').hide();
+  })
+})

@@ -46,4 +46,11 @@ Route::group(['as' => 'user.', 'namespace' => 'user'], function () {
         // profile更新
         Route::put('{user_id}/profile', 'ProfileController@update')->name('profile.update');
     });
+
+    Route::group(['prefix' => 'users/'], function () {
+        // user検索画面表示
+        Route::get('', 'UserController@showSearchForm')->name('index');
+        // user検索
+        Route::get('search', 'UserController@searchUser')->name('search');
+    });
 });
