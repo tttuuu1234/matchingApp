@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\MatchingAgeFromRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ProfileValidation extends FormRequest
@@ -28,8 +29,8 @@ class ProfileValidation extends FormRequest
             'age' => ['required', 'integer','min:2'],
             'prefecture' => ['required'],
             'sex' => ['required', 'integer'],
-            'matching_age_from' => ['required', 'integer'],
-            'matching_age_to' => ['required', 'integer'],
+            'matching_age_from' => ['required', 'integer', 'lte:matching_age_to'],
+            'matching_age_to' => ['required', 'integer', 'gte:matching_age_from'],
             'profile' => ['required', 'between:1,255'],
         ];
     }
