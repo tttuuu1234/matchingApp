@@ -7,7 +7,7 @@ use App\Repositories\Profile\ProfileRepositortInterface;
 use App\Services\ProfileService;
 use Illuminate\Support\ServiceProvider;
 
-class ProfileProvicder extends ServiceProvider
+class ProfileServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -25,6 +25,7 @@ class ProfileProvicder extends ServiceProvider
             'ProfileService',
             ProfileService::class
         );
+
     }
 
     /**
