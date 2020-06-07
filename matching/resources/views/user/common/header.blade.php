@@ -19,6 +19,7 @@
                 <i class="fas fa-search search-icon"></i>
             </div>
             <div class="modal" id="modal">
+                <div class="modal-bg" id="modal-bg-close"></div>
                 <div class="modal-contents">
                     <div class="user-form-search-container">
                         <div class="user-back-color modal-header text-white">
@@ -65,7 +66,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group text-center">
-                                    <button type="submit" class="btn btn-primary">検索</button>
+                                    <button type="submit" class="btn btn-vioret">検索</button>
                                 </div>
                             </form>
                         </div>

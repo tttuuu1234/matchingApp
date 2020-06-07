@@ -54,15 +54,18 @@
   height: 20px;
 }
 
-.modal {
-  background-color: rgba(128, 128, 128, 0.25);
-}
-
 .modal-header {
   position: relative;
   display: flex;
   justify-content: center;
   padding: 0;
+}
+
+.modal-bg {
+  background-color: rgba(128, 128, 128, 0.25);
+  position: absolute;
+  height: 100%;
+  width: 100%;
 }
 
 .modal-contents {
@@ -81,6 +84,12 @@
   top: 15%;
   left: 15%;
   cursor: pointer;
+}
+
+.btn-vioret {
+  color: white;
+  background-color: #9932cc;
+  width: 100px;
 }
 
 .dropdown-lists {

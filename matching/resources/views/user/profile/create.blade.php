@@ -73,7 +73,7 @@
                 <textarea class="form-control @error('profile') is-invalid @enderror" name="profile" id="profile" cols="30" rows="10" ></textarea>
             </div>
             <div class="form-group text-center">
-                <button type="submit" class="btn btn-primary">保存</button>
+                <button type="submit" class="btn btn-vioret">保存</button>
             </div>
         </form>
     </div>

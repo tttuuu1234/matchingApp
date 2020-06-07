@@ -17,4 +17,7 @@ $(function() {
   $('#modal-close').click(function() {
     $('#modal').hide();
   })
+  $('#modal-bg-close').click(function() {
+    $('#modal').hide();
+  })
 })
