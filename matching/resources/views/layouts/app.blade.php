@@ -22,7 +22,9 @@
     <div id="app" class="app">
         @include('user.common.header')
         @include('user.common.headerLists')
-        @yield('content')
+        <div class="mt-5">
+            @yield('content')
+        </div>
     </div>
 </body>
 </html>

@@ -1,4 +1,10 @@
 .user {
+    &-icon {
+        font-size: 42px;
+        &-box {
+            width: 150px;
+        }
+    }
     &-back-color {
         background-color: #9932cc;
     }
@@ -48,6 +54,15 @@
         &-checkbox {
             height: 20px;
         }
+    }
+    &-lists {
+        margin: 0 auto;
+        width: 700px;
+    }
+    &-list {
+        border-bottom: 1px solid darkgray;
+        margin-bottom: 24px;
+        padding-bottom: 16px;
     }
 }
 

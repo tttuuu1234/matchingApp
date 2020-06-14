@@ -1,3 +1,11 @@
+.user-icon {
+  font-size: 42px;
+}
+
+.user-icon-box {
+  width: 150px;
+}
+
 .user-back-color {
   background-color: #9932cc;
 }
@@ -52,6 +60,17 @@
 
 .user-form-checkbox {
   height: 20px;
+}
+
+.user-lists {
+  margin: 0 auto;
+  width: 700px;
+}
+
+.user-list {
+  border-bottom: 1px solid darkgray;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
 }
 
 .modal-header {
