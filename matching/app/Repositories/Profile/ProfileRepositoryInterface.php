@@ -4,7 +4,7 @@ namespace App\Repositories\Profile;
 
 use phpDocumentor\Reflection\Types\Integer;
 
-interface ProfileRepositortInterface
+interface ProfileRepositoryInterface
 {
 
     /**

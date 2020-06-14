@@ -4,7 +4,7 @@ namespace App\Repositories\Profile;
 
 use App\Models\{Profile, User};
 
-class ProfileRepository implements ProfileRepositortInterface
+class ProfileRepository implements ProfileRepositoryInterface
 {
     protected $user;
     protected $profile;

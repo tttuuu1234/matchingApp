@@ -3,7 +3,7 @@
 namespace App\Services;
 
 use App\Repositories\Prefecture\PrefectureRepositoryInterface;
-use App\Repositories\Profile\ProfileRepositortInterface;
+use App\Repositories\Profile\ProfileRepositoryInterface;
 use Illuminate\Support\Facades\Auth;
 
 class ProfileService
@@ -11,7 +11,7 @@ class ProfileService
     protected $profile_rep_if;
     protected $prefecture_rep_if;
 
-    public function __construct(ProfileRepositortInterface $profile_rep_if, PrefectureRepositoryInterface $prefecture_rep_if)
+    public function __construct(ProfileRepositoryInterface $profile_rep_if, PrefectureRepositoryInterface $prefecture_rep_if)
     {
         $this->profile_rep_if = $profile_rep_if;
         $this->prefecture_rep_if = $prefecture_rep_if;

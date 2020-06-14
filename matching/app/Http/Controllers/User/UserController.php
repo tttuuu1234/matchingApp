@@ -2,29 +2,29 @@
 
 namespace App\Http\Controllers\User;
 
-use App\Facades\ProfileService;
+use App\Facades\UserService;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Traits\Common;
 
 class UserController extends Controller
 {
-    use Common;
 
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-    public function showSearchForm()
+    public function index()
     {
-        $prefectures =  ProfileService::getPrefectures();
-        $ages = $this->getAges();
-        return view('user.search', compact('prefectures', 'ages'));
+        $users = UserService::getUsers();
+
+        return view('user.index', compact('users'));
     }
 
-    public function searchUser()
+    public function search(Request $request)
     {
+        $users = UserService::searchUsers($request->all());
 
+        return response()->json($users);
     }
 }

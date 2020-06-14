@@ -176,6 +176,7 @@ return [
         App\Providers\HeaderServiceProvider::class,
         App\Providers\ProfileServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\UserServiceProvider::class
 
     ],
 
@@ -228,7 +229,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
-        'ProfileService' => App\Facades\ProfileService::class
+        'ProfileService' => App\Facades\ProfileService::class,
+        'UserService' => App\Facades\UserService::class
 
     ],
 

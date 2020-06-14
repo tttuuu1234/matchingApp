@@ -48,9 +48,9 @@ Route::group(['as' => 'user.', 'namespace' => 'user'], function () {
     });
 
     Route::group(['prefix' => 'users/'], function () {
-        // user検索画面表示
-        Route::get('', 'UserController@showSearchForm')->name('index');
+        // user一覧画面表示
+        Route::get('', 'UserController@index')->name('index');
         // user検索
-        Route::get('search', 'UserController@searchUser')->name('search');
+        Route::get('search', 'UserController@search')->name('search');
     });
 });
