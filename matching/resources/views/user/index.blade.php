@@ -12,8 +12,8 @@
                         <div>
                             <div class="d-flex">
                                 <p class="user-name">{{ $user->user_name }}</p>
-                                <p class="user-age">{{ $user->age }}</p>
-                                <p class="user-prefecture">{{ $user->prefecture_name }}</p>
+                                <p class="user-age ml-2">{{ $user->age }}</p>
+                                <p class="user-prefecture ml-2">{{ $user->prefecture_name }}</p>
                             </div>
                             <div class="">
                                 <p class="user-profile">{{ $user->profile }}</p>
