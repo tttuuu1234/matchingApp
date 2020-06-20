@@ -13,7 +13,7 @@ interface ProfileRepositoryInterface
      *
      * @return object
      */
-    public function getProfile(string $userId);
+    public function getProfile(int $userId);
 
     /**
      * profile作成

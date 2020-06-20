@@ -27,4 +27,18 @@ class UserController extends Controller
 
         return response()->json($users);
     }
+
+    public function sendMatching(Request $request)
+    {
+        $matching = UserService::sendMatchingUsers($request->all());
+
+        return response()->json($matching);
+    }
+
+    public function sentMatchingUsersList()
+    {
+        $users = UserService::sentMatchingUsersList();
+
+        return view('user.match.sender', compact('users'));
+    }
 }

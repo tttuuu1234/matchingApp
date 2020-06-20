@@ -77,6 +77,7 @@
                 <ul class="dropdown-lists">
                     <li class="dropdown-list"><a href="{{ route('user.logout') }}">ログアウト</a></li>
                     <li class="dropdown-list"><a href="{{ route('user.profile.show',[Auth::id()]) }}">プロフィール</a></li>
+                    <li class="dropdown-list"><a href="{{ route('user.match.sent') }}">マッチング送信済み</a></li>
                 </ul>
             </div>
         </div>

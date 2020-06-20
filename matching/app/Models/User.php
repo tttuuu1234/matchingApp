@@ -42,6 +42,11 @@ class User extends Authenticatable
         return $this->hasOne(Profile::class);
     }
 
+    public function matchSender()
+    {
+        return $this->hasOne(Match::class, 'id', 'match_sender_id');
+    }
+
     public function scopeSex($query, $sex)
     {
         return $query->where('sex', '=', $sex);

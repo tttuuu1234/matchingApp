@@ -45,6 +45,10 @@ Route::group(['as' => 'user.', 'namespace' => 'user'], function () {
         Route::get('{user_id}/profile/edit', 'ProfileController@edit')->name('profile.edit');
         // profile更新
         Route::put('{user_id}/profile', 'ProfileController@update')->name('profile.update');
+        
+        // matching希望送信
+        Route::post('match', 'UserController@sendMatching')->name('match');
+        Route::get('match/lists', 'UserController@sentMatchingUsersList')->name('match.sent');
     });
 
     Route::group(['prefix' => 'users/'], function () {

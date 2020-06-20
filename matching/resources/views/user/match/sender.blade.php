@@ -20,11 +20,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="d-flex justify-content-between">
-                        <div class="user-matching">
-                            <input type="hidden" name="match_id" value="{{ $user->id }}" id="matchUser{{ $user->id }}">
-                            <button class="btn btn-vioret w-auto btn-match">マッチング希望</button>
-                        </div>
+                    <div class="d-flex justify-content-end">
                         <div class="user-report">
                             <button class="btn btn-danger">通報</button>
                         </div>
