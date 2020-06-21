@@ -146,9 +146,7 @@ $(function () {
 }); // マッチング希望送信
 
 $(function () {
-  console.log('dddd');
   $(document).on('click', '.btn-match', function () {
-    console.log('aaaaa');
     var matchReciverId = $(this).prev('input[name="match_id"]');
     $.ajax({
       headers: {
@@ -169,7 +167,23 @@ $(function () {
         matchUser.next('button').remove();
         matchUser.after('<p>承認結果待ち</p>');
       }
-    }).fail(function (data) {// console.log(data)
+    }).fail(function (data) {
+      console.log(data);
+    });
+  });
+});
+$(function () {
+  $(document).on('click', '.btn-match-approval', function () {
+    $.ajax({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      },
+      url: '/user/match/approval',
+      type: 'POST',
+      dataType: 'json',
+      data: {
+        'approval_match_id': $(this).prev('input[name="approval_match_id"]').val()
+      }
     });
   });
 });

@@ -47,8 +47,13 @@ Route::group(['as' => 'user.', 'namespace' => 'user'], function () {
         Route::put('{user_id}/profile', 'ProfileController@update')->name('profile.update');
         
         // matching希望送信
-        Route::post('match', 'UserController@sendMatching')->name('match');
-        Route::get('match/lists', 'UserController@sentMatchingUsersList')->name('match.sent');
+        Route::post('match', 'MatchController@sendMatching')->name('match');
+        // matching希望送信対象一覧表示
+        Route::get('match/list', 'MatchController@sentMatchingUsersList')->name('match.sent');
+        // matching希望受信一覧表示
+        Route::get('match/recive/list', 'MatchController@reciveMatchingUsersList')->name('match.recive');
+        // matching承認
+        Route::post('match/approval', 'MatchController@approvalMatching');
     });
 
     Route::group(['prefix' => 'users/'], function () {

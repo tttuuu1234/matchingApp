@@ -10,7 +10,7 @@
         <a href="#">チャット</a>
     </li>
     <li class="user-headre-list">
-        <a href="#">マッチング希望一覧</a>
+        <a href="{{ route('user.match.recive') }}">マッチング希望一覧</a>
     </li>
 </ul>
 @endauth

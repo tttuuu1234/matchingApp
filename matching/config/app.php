@@ -174,6 +174,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\HeaderServiceProvider::class,
+        App\Providers\MatchServiceProvider::class,
         App\Providers\ProfileServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\UserServiceProvider::class
@@ -229,6 +230,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        'MatchSerivce' => App\Facades\MatchService::class,
         'ProfileService' => App\Facades\ProfileService::class,
         'UserService' => App\Facades\UserService::class
 

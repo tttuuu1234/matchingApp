@@ -41,4 +41,17 @@ class UserController extends Controller
 
         return view('user.match.sender', compact('users'));
     }
+
+    public function reciveMatchingUsersList()
+    {
+        $users = UserService::reciveMatchingUsersList();
+
+        return view('user.match.reciver', compact('users'));
+    }
+
+    public function approvalMatching(Request $request)
+    {
+        // dd($request->all());
+        UserService::approvalMatching($request->all());
+    }
 }

@@ -17,22 +17,7 @@ interface UserRepositoryInterface
      * user検索
      * @param array $searchInputs
      *
-     * @return void
+     * @return array
      */
     public function searchUsers(array $serchInputs);
-
-    /**
-     * マッチング希望送信
-     *
-     * @param array $inputs
-     * @return void
-     */
-    public function sendMatching(array $inputs);
-
-    /**
-     * マッチング希望送信済みのuser取得
-     *
-     * @return void
-     */
-    public function sentMatchingUsersList(int $userId);
 }

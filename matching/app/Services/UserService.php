@@ -34,23 +34,4 @@ class UserService
 
         return $this->user_rep_if->searchUsers($searchInputs);
     }
-
-    public function sendMatchingUsers($inputs)
-    {
-        // 自分自身にマッチング希望を送信した場合は弾く
-        if (intval($inputs['match_reciver_id'])  === Auth::id()) {
-            return;
-        }
-
-        $inputs['match_sender_id'] = Auth::id();
-        $inputs['match_reciver_id'] = intval($inputs['match_reciver_id']);
-
-        return $this->user_rep_if->sendMatching($inputs);
-    }
-
-    public function sentMatchingUsersList()
-    {
-        return $this->user_rep_if->sentMatchingUsersList(Auth::id());
-    }
-
 }
