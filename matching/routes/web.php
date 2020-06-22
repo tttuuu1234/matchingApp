@@ -19,12 +19,12 @@ use Illuminate\Support\Facades\Route;
 
 // user
 Route::group(['as' => 'user.', 'namespace' => 'user'], function () {
-    // 登録画面表示
+    // 登録画面
     Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register.form');
     // 登録処理
     Route::post('register', 'Auth\RegisterController@register')->name('register');
 
-    // ログイン画面表示
+    // ログイン画面
     Route::get('login', 'Auth\LoginController@showLoginForm')->name('login.form');
     // ログイン処理
     Route::post('login', 'Auth\LoginController@login')->name('login');
@@ -35,13 +35,13 @@ Route::group(['as' => 'user.', 'namespace' => 'user'], function () {
     Route::get('/', 'HomeController@index')->name('home');
 
     Route::group(['prefix' => 'user/'], function () {
-        // profile詳細画面表示
+        // profile詳細画面
         Route::get('{user_id}/profile', 'ProfileController@show')->name('profile.show');
-        // profile登録画面表示
+        // profile登録画面
         Route::get('profile', 'ProfileController@create')->name('profile.create');
         // profile登録
         Route::post('profile', 'ProfileController@store')->name('profile.store');
-        // profile編集画面表示
+        // profile編集画面
         Route::get('{user_id}/profile/edit', 'ProfileController@edit')->name('profile.edit');
         // profile更新
         Route::put('{user_id}/profile', 'ProfileController@update')->name('profile.update');
@@ -54,10 +54,13 @@ Route::group(['as' => 'user.', 'namespace' => 'user'], function () {
         Route::get('match/recive/list', 'MatchController@reciveMatchingUsersList')->name('match.recive');
         // matching承認
         Route::post('match/approval', 'MatchController@approvalMatching');
+
+        // chat一覧画面
+        Route::get('chat', 'ChatController@index')->name('chat.index');
     });
 
     Route::group(['prefix' => 'users/'], function () {
-        // user一覧画面表示
+        // user一覧画面
         Route::get('', 'UserController@index')->name('index');
         // user検索
         Route::get('search', 'UserController@search')->name('search');

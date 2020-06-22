@@ -112,3 +112,23 @@
         font-size: 12px;
     }
 }
+
+.chat {
+    &-container {
+        
+    }
+    &-lists {
+    }
+    &-list {
+        display: flex;
+        position: relative;
+        border-bottom: 1px solid darkgray;
+        margin-bottom: 24px;
+        padding-bottom: 16px;
+    }
+    &-submit {
+        position: absolute;
+        right: 0;
+        top: 15%;
+    }
+}
