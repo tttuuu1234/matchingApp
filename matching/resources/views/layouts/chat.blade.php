@@ -21,7 +21,6 @@
 <body>
     <div id="app" class="app">
         @include('user.common.header')
-        @include('user.common.headerLists')
         <div class="mt-5">
             @yield('content')
         </div>

@@ -172,9 +172,13 @@ return [
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\ChatServiceProvider::class,
         App\Providers\EventServiceProvider::class,
-        App\Providers\ProfileProvicder::class,
+        App\Providers\HeaderServiceProvider::class,
+        App\Providers\MatchServiceProvider::class,
+        App\Providers\ProfileServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\UserServiceProvider::class
 
     ],
 
@@ -227,7 +231,10 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
-        'ProfileService' => App\Facades\ProfileService::class
+        'ChatService' => App\Facades\ChatService::class,
+        'MatchSerivce' => App\Facades\MatchService::class,
+        'ProfileService' => App\Facades\ProfileService::class,
+        'UserService' => App\Facades\UserService::class
 
     ],
 

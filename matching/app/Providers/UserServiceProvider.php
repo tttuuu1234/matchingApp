@@ -2,12 +2,12 @@
 
 namespace App\Providers;
 
-use App\Repositories\Profile\ProfileRepository;
-use App\Repositories\Profile\ProfileRepositortInterface;
-use App\Services\ProfileService;
 use Illuminate\Support\ServiceProvider;
+use App\Services\UserService;
+use App\Repositories\User\UserRepository;
+use App\Repositories\User\UserRepositoryInterface;
 
-class ProfileProvicder extends ServiceProvider
+class UserServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -17,13 +17,13 @@ class ProfileProvicder extends ServiceProvider
     public function register()
     {
         $this->app->bind(
-            ProfileRepositortInterface::class,
-            ProfileRepository::class
+            UserRepositoryInterface::class,
+            UserRepository::class
         );
 
         $this->app->bind(
-            'ProfileService',
-            ProfileService::class
+            'UserService',
+            UserService::class
         );
     }
 

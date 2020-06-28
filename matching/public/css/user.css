@@ -1,3 +1,15 @@
+.user-icon {
+  font-size: 42px;
+}
+
+.user-icon-box {
+  width: 150px;
+}
+
+.user-back-color {
+  background-color: #9932cc;
+}
+
 .user-header {
   padding-top: 24px;
   display: flex;
@@ -14,24 +26,89 @@
   align-items: center;
 }
 
+.user-header-contents {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 150px;
+}
+
 .user-header-profile {
   font-size: 40px;
   position: relative;
   cursor: pointer;
 }
 
-.user-profile-container {
+.user-header-search {
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.user-form-search-container {
+  width: 400px;
+}
+
+.user-form-container {
   margin: 56px auto 0;
   width: 400px;
 }
 
-.user-profile-form-parts {
+.user-form-parts {
   margin: 0 auto;
   width: 50%;
 }
 
-.user-profile-form-checkbox {
+.user-form-checkbox {
   height: 20px;
+}
+
+.user-lists {
+  margin: 0 auto;
+  width: 700px;
+}
+
+.user-list {
+  border-bottom: 1px solid darkgray;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+}
+
+.modal-header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.modal-bg {
+  background-color: rgba(128, 128, 128, 0.25);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.modal-contents {
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-close {
+  position: absolute;
+  font-size: 1.575rem;
+  top: 15%;
+  left: 15%;
+  cursor: pointer;
+}
+
+.btn-vioret {
+  color: white;
+  background-color: #9932cc;
+  width: 100px;
 }
 
 .dropdown-lists {
@@ -41,5 +118,50 @@
 
 .dropdown-list {
   font-size: 12px;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 12%;
+}
+
+.chat-back-btn {
+  width: auto;
+}
+
+.chat-contents {
+  overflow: scroll;
+  height: 550px;
+}
+
+.chat-list {
+  display: flex;
+  position: relative;
+  border-bottom: 1px solid darkgray;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+}
+
+.chat-submit {
+  position: absolute;
+  right: 0;
+  top: 15%;
+}
+
+.message {
+  margin-bottom: 0;
+  word-break: break-all;
+}
+
+.message-contents {
+  position: fixed;
+  bottom: 5%;
+}
+
+.message-box {
+  padding: 8px;
+  width: 500px;
 }
 

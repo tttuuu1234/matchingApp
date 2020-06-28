@@ -4,7 +4,7 @@ namespace App\Repositories\Profile;
 
 use App\Models\{Profile, User};
 
-class ProfileRepository implements ProfileRepositortInterface
+class ProfileRepository implements ProfileRepositoryInterface
 {
     protected $user;
     protected $profile;
@@ -51,5 +51,10 @@ class ProfileRepository implements ProfileRepositortInterface
             'matching_age_to' => $inputs['matching_age_to'],
             'profile' => $inputs['profile'],
         ]);
+    }
+
+    public function getMatchingUserProfile(int $userId)
+    {
+        return $this->profile->where('id', $userId)->first();
     }
 }

@@ -29,6 +29,7 @@ class ProfileController extends Controller
     {
         $prefectures = ProfileService::getPrefectures();
         $ages = $this->getAges();
+
         return view('user.profile.create', compact('prefectures', 'ages'));
     }
 

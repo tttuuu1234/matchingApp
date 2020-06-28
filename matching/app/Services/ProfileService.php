@@ -3,7 +3,7 @@
 namespace App\Services;
 
 use App\Repositories\Prefecture\PrefectureRepositoryInterface;
-use App\Repositories\Profile\ProfileRepositortInterface;
+use App\Repositories\Profile\ProfileRepositoryInterface;
 use Illuminate\Support\Facades\Auth;
 
 class ProfileService
@@ -11,7 +11,7 @@ class ProfileService
     protected $profile_rep_if;
     protected $prefecture_rep_if;
 
-    public function __construct(ProfileRepositortInterface $profile_rep_if, PrefectureRepositoryInterface $prefecture_rep_if)
+    public function __construct(ProfileRepositoryInterface $profile_rep_if, PrefectureRepositoryInterface $prefecture_rep_if)
     {
         $this->profile_rep_if = $profile_rep_if;
         $this->prefecture_rep_if = $prefecture_rep_if;
@@ -19,7 +19,7 @@ class ProfileService
 
     /**
      * profile取得
-     * @param integer $userId
+     * @param string $userId
      *
      * @return object
      */
@@ -49,7 +49,7 @@ class ProfileService
     /**
      * profile更新
      * @param array $inputs
-     * @param integer $userId
+     * @param string $userId
      */
     public function update($inputs, $userId)
     {
@@ -64,6 +64,18 @@ class ProfileService
     public function getPrefectures()
     {
         return $this->prefecture_rep_if->getPrefectures();
+    }
+
+    public function getMatchingOpponent($chatRoomInfo)
+    {
+        // chatページでマッチング相手の情報を表示させるため
+        if ($chatRoomInfo['match_sender_id'] === Auth::id()) {
+            $userId = $chatRoomInfo['match_reciver_id'];
+        } else{
+            $userId = $chatRoomInfo['match_sender_id'];
+        }
+
+        return $this->profile_rep_if->getMatchingUserProfile($userId);
     }
 
 }

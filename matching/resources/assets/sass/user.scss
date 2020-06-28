@@ -1,4 +1,13 @@
 .user {
+    &-icon {
+        font-size: 42px;
+        &-box {
+            width: 150px;
+        }
+    }
+    &-back-color {
+        background-color: #9932cc;
+    }
     &-header {
         padding-top: 24px;
         display: flex;
@@ -12,28 +21,88 @@
             justify-content: space-around;
             align-items: center;
         }
+        &-contents {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 150px;
+        }
         &-profile {
             font-size: 40px;
             position: relative;
             cursor: pointer;
         }
+        &-search {
+            font-size: 40px;
+            cursor: pointer;
+        }
     }
-    &-profile {
+    &-form {
+        &-search {
+            &-container {
+                width: 400px;
+            }
+        }
         &-container {
             margin: 56px auto 0;
             width: 400px;
         }
-        &-form {
-            &-parts {
-                margin:  0 auto;
-                width: 50%;
-            }
-            &-checkbox {
-                height: 20px;
-            }
+        &-parts {
+            margin:  0 auto;
+            width: 50%;
+        }
+        &-checkbox {
+            height: 20px;
         }
     }
+    &-lists {
+        margin: 0 auto;
+        width: 700px;
+    }
+    &-list {
+        border-bottom: 1px solid darkgray;
+        margin-bottom: 24px;
+        padding-bottom: 16px;
+    }
 }
+
+.modal {
+    &-header {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+    }
+    &-bg {
+        background-color:rgba(128,128,128,0.25);
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+    &-contents {
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: #f5f5f5;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &-close {
+        position: absolute;
+        font-size: 1.575rem;
+        top: 15%;
+        left: 15%;
+        cursor: pointer;
+    }
+}
+
+.btn-vioret  {
+    color: white;
+    background-color: #9932cc;
+    width: 100px;
+}
+
 .dropdown {
     &-lists {
         display: none;
@@ -41,5 +110,48 @@
     }
     &-list {
         font-size: 12px;
+    }
+}
+
+.chat {
+    &-header {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 12%;
+    }
+    &-back-btn {
+        width: auto;
+    }
+    &-contents  {
+        overflow: scroll;
+        height: 550px;
+        // border: 1px solid #9932cc;
+        // border-radius: 3px;
+    }
+    &-list {
+        display: flex;
+        position: relative;
+        border-bottom: 1px solid darkgray;
+        margin-bottom: 24px;
+        padding-bottom: 16px;
+    }
+    &-submit {
+        position: absolute;
+        right: 0;
+        top: 15%;
+    }
+}
+
+.message {
+    margin-bottom: 0;
+    word-break: break-all;
+    &-contents {
+        position: fixed;
+        bottom: 5%;
+    }
+    &-box {
+        padding: 8px;
+        width: 500px;
     }
 }
