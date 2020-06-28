@@ -120,6 +120,22 @@
   font-size: 12px;
 }
 
+.chat-header {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 12%;
+}
+
+.chat-back-btn {
+  width: auto;
+}
+
+.chat-contents {
+  overflow: scroll;
+  height: 550px;
+}
+
 .chat-list {
   display: flex;
   position: relative;
@@ -134,33 +150,18 @@
   top: 15%;
 }
 
-.chatting {
-  margin-bottom: 32px;
+.message {
+  margin-bottom: 0;
+  word-break: break-all;
 }
 
-.left-says {
-  border-bottom: 1px solid #9932cc;
-  border-radius: 3px;
-  margin-top: 8px;
-}
-
-.right-says {
-  border-bottom: 1px solid #9932cc;
-  border-radius: 3px;
-  margin-top: 8px;
-}
-
-.message-box-fixed {
+.message-contents {
   position: fixed;
   bottom: 5%;
 }
 
 .message-box {
   padding: 8px;
-  width: 700px;
-}
-
-.btn-message {
-  margin-left: 56px;
+  width: 500px;
 }
 

@@ -66,6 +66,6 @@ class ChatService
 
     public function sendMessage($messageContents)
     {
-        $this->chat_rep_if->sendMessage($messageContents);
+        return $this->chat_rep_if->sendMessage($messageContents);
     }
 }

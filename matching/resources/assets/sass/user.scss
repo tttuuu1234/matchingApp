@@ -114,10 +114,20 @@
 }
 
 .chat {
-    &-container {
-        
+    &-header {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 12%;
     }
-    &-lists {
+    &-back-btn {
+        width: auto;
+    }
+    &-contents  {
+        overflow: scroll;
+        height: 550px;
+        // border: 1px solid #9932cc;
+        // border-radius: 3px;
     }
     &-list {
         display: flex;
@@ -133,35 +143,15 @@
     }
 }
 
-.chatting {
-    margin-bottom: 32px;
+.message {
+    margin-bottom: 0;
+    word-break: break-all;
+    &-contents {
+        position: fixed;
+        bottom: 5%;
+    }
+    &-box {
+        padding: 8px;
+        width: 500px;
+    }
 }
-
-.left-says {
-    border-bottom: 1px solid #9932cc;
-    border-radius: 3px;
-    margin-top: 8px;
-}
-
-.right-says {
-    border-bottom: 1px solid #9932cc;
-    border-radius: 3px;
-    margin-top: 8px;
-}
-
-.message-box-fixed {
-    position: fixed;
-    bottom: 5%;
-}
-
-.message-box {
-    padding: 8px;
-    width: 700px;
-}
-
-.btn-message {
-    margin-left: 56px;
-}
-
-
-

@@ -111,7 +111,7 @@ class ChatRepository implements ChatRepositoryInterface
 
     public function sendMessage(array $messageContents)
     {
-        $this->chat->create([
+        return $this->chat->create([
                             'sender_id' => $messageContents['sender_id'],
                             'reciver_id' => $messageContents['reciver_id'],
                             'chat_room_id' => $messageContents['chat_room_id'],
