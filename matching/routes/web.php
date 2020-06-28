@@ -57,6 +57,10 @@ Route::group(['as' => 'user.', 'namespace' => 'user'], function () {
 
         // chat一覧画面
         Route::get('chat', 'ChatController@index')->name('chat.index');
+        // chat画面
+        Route::get('chat/{id}',  'ChatController@getChatRoom')->name('chat.room');
+        // message送信
+        Route::post('chat', 'ChatController@sendMessage')->name('chat.send');
     });
 
     Route::group(['prefix' => 'users/'], function () {

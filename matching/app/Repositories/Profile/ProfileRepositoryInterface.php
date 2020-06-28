@@ -28,4 +28,11 @@ interface ProfileRepositoryInterface
      */
     public function update(array $inputs, string $userId);
 
+    /**
+     * loginしているuserがマッチング希望を送信した、もしくは送信された相手の情報を取得
+     *
+     * @param integer $userId
+     * @return Illuminate\Support\Collection
+     */
+    public function getMatchingUserProfile(int $userId);
 }

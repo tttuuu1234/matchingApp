@@ -12,7 +12,9 @@
                     <p class="message">よろしくね</p>
                 </div>
                 <div class="chat-submit">
-                    <button class="btn btn-vioret">chatページ</button>
+                    <a href="{{ route('user.chat.room', [$user->id]) }}">
+                        <button class="btn btn-vioret">chatページ</button>
+                    </a>
                 </div>
             </li>
         @endforeach

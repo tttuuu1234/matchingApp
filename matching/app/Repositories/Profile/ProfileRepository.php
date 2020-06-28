@@ -52,4 +52,9 @@ class ProfileRepository implements ProfileRepositoryInterface
             'profile' => $inputs['profile'],
         ]);
     }
+
+    public function getMatchingUserProfile(int $userId)
+    {
+        return $this->profile->where('id', $userId)->first();
+    }
 }

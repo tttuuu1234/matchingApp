@@ -171,7 +171,8 @@ $(function () {
       console.log(data);
     });
   });
-});
+}); // マッチング承認
+
 $(function () {
   $(document).on('click', '.btn-match-approval', function () {
     $.ajax({
@@ -184,6 +185,30 @@ $(function () {
       data: {
         'approval_match_id': $(this).prev('input[name="approval_match_id"]').val()
       }
+    });
+  });
+}); // message送信
+
+$(function () {
+  $(document).on('click', '#sendMessage', function () {
+    console.log('きてる');
+    $.ajax({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      },
+      url: '/user/chat',
+      type: 'POST',
+      dataType: 'json',
+      data: {
+        'sender_id': $('#senderId').val(),
+        'reciver_id': $('#reciverId').val(),
+        'chat_room_id': $('#chatRoomId').val(),
+        'message': $('#message').val()
+      }
+    }).done(function (data) {
+      console.log(data);
+    }).fail(function (data) {
+      console.log(data);
     });
   });
 });

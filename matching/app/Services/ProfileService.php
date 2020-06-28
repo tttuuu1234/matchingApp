@@ -66,4 +66,16 @@ class ProfileService
         return $this->prefecture_rep_if->getPrefectures();
     }
 
+    public function getMatchingOpponent($chatRoomInfo)
+    {
+        // chatページでマッチング相手の情報を表示させるため
+        if ($chatRoomInfo['match_sender_id'] === Auth::id()) {
+            $userId = $chatRoomInfo['match_reciver_id'];
+        } else{
+            $userId = $chatRoomInfo['match_sender_id'];
+        }
+
+        return $this->profile_rep_if->getMatchingUserProfile($userId);
+    }
+
 }

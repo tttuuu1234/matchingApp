@@ -2,15 +2,18 @@
 
 namespace App\Services;
 
+use App\Repositories\Chat\ChatRepositoryInterface;
 use App\Repositories\Match\MatchRepositoryInterface;
 use Illuminate\Support\Facades\Auth;
 
 class MatchService
 {
+    protected $chat_rep_if;
     protected $match_rep_if;
 
-    public function __construct(MatchRepositoryInterface $match_rep_if)
+    public function __construct(ChatRepositoryInterface $chat_rep_if , MatchRepositoryInterface $match_rep_if)
     {
+        $this->chat_rep_if = $chat_rep_if;
         $this->match_rep_if = $match_rep_if;
     }
 
@@ -39,6 +42,8 @@ class MatchService
 
     public function approvalMatching($request)
     {
-        return $this->match_rep_if->approvalMatching(intval($request['approval_match_id']));
+        $macthResults = $this->match_rep_if->approvalMatching(intval($request['approval_match_id']));
+        $this->chat_rep_if->createRoom($macthResults->id);
+
     }
 }

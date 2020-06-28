@@ -132,3 +132,36 @@
         top: 15%;
     }
 }
+
+.chatting {
+    margin-bottom: 32px;
+}
+
+.left-says {
+    border-bottom: 1px solid #9932cc;
+    border-radius: 3px;
+    margin-top: 8px;
+}
+
+.right-says {
+    border-bottom: 1px solid #9932cc;
+    border-radius: 3px;
+    margin-top: 8px;
+}
+
+.message-box-fixed {
+    position: fixed;
+    bottom: 5%;
+}
+
+.message-box {
+    padding: 8px;
+    width: 700px;
+}
+
+.btn-message {
+    margin-left: 56px;
+}
+
+
+

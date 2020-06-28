@@ -74,7 +74,13 @@ class MatchRepository implements MatchRepositoryInterface
 
     public function approvalMatching($approvalMatchId)
     {
-        $this->match->find($approvalMatchId)->update(['approval' => 1]);
-    }
+        $match = $this->match->find($approvalMatchId);
 
+        try {
+            $match->update(['approval' => 1]);
+            return $match;
+        } catch (\Throwable $th) {
+            
+        }
+    }
 }

@@ -21,7 +21,7 @@ interface MatchRepositoryInterface
     public function sentMatchingUsersList(int $userId);
 
     /**
-     * マッチング希望受信
+     * マッチング希望を送信してくれたuser取得
      * @param int $userId
      *
      * @return array
