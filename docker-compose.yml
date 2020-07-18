@@ -14,23 +14,25 @@ services:
 
   app:
     build: ./docker/php
+    container_name: app
     volumes:
       - .:/var/www/html
     depends_on:
-      - mysql
+      - db
 
-  mysql:
+  db:
     image: mysql:5.7
+    container_name: db
     env_file: .env
     environment:
       MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_USER: ${DB_USERNAME}
       MYSQL_PASSWORD: ${DB_PASSWORD}
-
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
     ports:
       - "3306:3306"
     volumes:
       - mysql-data:/var/lib/mysql
-    command: "echo Hello"
+
 volumes:
   mysql-data:
