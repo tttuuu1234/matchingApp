@@ -53,32 +53,32 @@ $(function() {
 })
 
 // マッチング希望送信
-$(function() {
-  $(document).on('click', '.btn-match', function() {
-    let matchReciverId = $(this).prev('input[name="match_id"]')
-    $.ajax({
-      headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      },
-      url: './user/match',
-      type: 'POST',
-      dataType: 'json',
-      data: {
-        'match_reciver_id': matchReciverId.val()
-      }
-    }).done(function(data) {
-      console.log(data.match_reciver_id)
-      console.log(matchReciverId.val())
-      if (data.match_reciver_id == matchReciverId.val()) {
-        const matchUser = $('#'+'matchUser' + matchReciverId.val())
-        matchUser.next('button').remove()
-        matchUser.after('<p>承認結果待ち</p>')
-      }
-    }).fail(function(data) {
-      console.log(data)
-    })
-  })
-})
+// $(function() {
+//   $(document).on('click', '.btn-match', function() {
+//     let matchReciverId = $(this).prev('input[name="match_id"]')
+//     $.ajax({
+//       headers: {
+//         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+//       },
+//       url: './user/match',
+//       type: 'POST',
+//       dataType: 'json',
+//       data: {
+//         'match_reciver_id': matchReciverId.val()
+//       }
+//     }).done(function(data) {
+//       console.log(data.match_reciver_id)
+//       console.log(matchReciverId.val())
+//       if (data.match_reciver_id == matchReciverId.val()) {
+//         const matchUser = $('#'+'matchUser' + matchReciverId.val())
+//         matchUser.next('button').remove()
+//         matchUser.after('<p>承認結果待ち</p>')
+//       }
+//     }).fail(function(data) {
+//       console.log(data)
+//     })
+//   })
+// })
 
 // マッチング承認
 $(function() {
