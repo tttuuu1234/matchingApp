@@ -83,7 +83,7 @@ class ChatRepository implements ChatRepositoryInterface
                             'chat_rooms.id',
                             'chat_rooms.match_id',
                             'matches.match_sender_id',
-                            'matches.match_reciver_id',
+                            'matches.match_reciver_id'
                         )
                         ->get();
     }
