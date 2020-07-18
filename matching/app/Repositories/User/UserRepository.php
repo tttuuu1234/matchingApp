@@ -27,6 +27,10 @@ class UserRepository implements UserRepositoryInterface
                         ->join('prefectures as pc', function($join) {
                             $join->on('pc.id', 'pf.prefecture_id');
                         })
+                        ->join('matches', function($join) use($userId){
+                            $join->on('matches.match_sender_id', 'users.id')
+                            ->where('matches.match_sender_id', '<>', $userId);
+                        })
                         ->select(
                             'users.id',
                             'pf.name as user_name',
