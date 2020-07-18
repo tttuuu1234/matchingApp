@@ -45,7 +45,7 @@ Route::group(['as' => 'user.', 'namespace' => 'user'], function () {
         Route::get('{user_id}/profile/edit', 'ProfileController@edit')->name('profile.edit');
         // profile更新
         Route::put('{user_id}/profile', 'ProfileController@update')->name('profile.update');
-        
+
         // matching希望送信
         Route::post('match', 'MatchController@sendMatching')->name('match');
         // matching希望送信対象一覧表示
