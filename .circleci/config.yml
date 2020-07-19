@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/php:7.2-apache-node-browsers
+      - image: circleci/php:7.3-apache-node-browsers
       - image: circleci/mysql:5.7
 
       # Specify service dependencies here if necessary
@@ -20,7 +20,7 @@ jobs:
       - APP_DEBUG: true
       - APP_ENV: testing
       - APP_KEY: ${APP_KEY}
-      - DB_CONNECTION: ${DB_CONNECTION}
+      - DB_CONNECTION: mysql_testing
       - MYSQL_ALLOW_EMPTY_PASSWORD: true
 
     working_directory: ~/repo
@@ -32,29 +32,27 @@ jobs:
       - run: sudo docker-php-ext-install pdo_mysql
 
       # Download and cache dependencies
-      # - restore_cache:
-      #     keys:
-      #     - v1-dependencies-{{ checksum "composer.json" }}
-      #     # fallback to using the latest cache if no exact match is found
-      #     - v1-dependencies-
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "composer.json" }}
+            - v1-dependencies-
 
-      - run: 
-          WORKDIR: ./matching
+      - run:
           command: composer install -n --prefer-dist
 
-      # - save_cache:
-      #     paths:
-      #       - ./matching/vendor
-      #     key: v1-dependencies-{{ checksum "composer.json" }}
+      - save_cache:
+          paths:
+            - ./vendor
+          key: v1-dependencies-{{ checksum "composer.json" }}
 
       # run seeding
-      - run:
-          WORKDIR: ./matching
-          command: php artisan migrate
+      # - run:
+      #     working_directory: ./matching
+      #     command: php artisan migrate
 
-      - run:
-          WORKDIR: ./matching
-          command: php artisan db:seed
+      # - run:
+      #     working_directory: ./matching
+      #     command: php artisan db:seed
 
       # run tests!
       - run: php ./vendor/bin/phpunit
