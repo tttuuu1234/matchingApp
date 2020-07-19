@@ -47,9 +47,11 @@ jobs:
 
       # run seeding
       - run:
+          WORKDIR: ./matching
           command: php artisan migrate
 
       - run:
+          WORKDIR: ./matching
           command: php artisan db:seed
 
       # run tests!
