@@ -43,11 +43,14 @@ jobs:
       - save_cache:
           paths:
             - ./matching/vendor
-          key: v1-dependencies-{{ checksum "composer.json" }}
+          # key: v1-dependencies-{{ checksum "composer.json" }}
 
       # run seeding
-      - run: php artisan migrate
-      - run: php artisan db:seed
+      - run:
+        command: php artisan migrate
+
+      - run:
+        command: php artisan db:seed
 
       # run tests!
       - run: php ./vendor/bin/phpunit
