@@ -40,9 +40,9 @@ jobs:
 
       # - run: composer install -n --prefer-dist
 
-      - save_cache:
-          paths:
-            - ./matching/vendor
+      # - save_cache:
+      #     paths:
+      #       - ./matching/vendor
           # key: v1-dependencies-{{ checksum "composer.json" }}
 
       # run seeding
