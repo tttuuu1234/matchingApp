@@ -23,7 +23,7 @@ jobs:
       - DB_CONNECTION: mysql_testing
       - MYSQL_ALLOW_EMPTY_PASSWORD: true
 
-    working_directory: ~/repo
+    working_directory: ~/matching
 
     steps:
       - checkout
