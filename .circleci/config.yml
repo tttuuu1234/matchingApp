@@ -42,7 +42,7 @@ jobs:
 
       - save_cache:
           paths:
-            - ./vendor
+            - ./matching/vendor
           key: v1-dependencies-{{ checksum "composer.json" }}
 
       # run seeding
