@@ -19,11 +19,11 @@ jobs:
     environment:
       - APP_DEBUG: true
       - APP_ENV: testing
-      - APP_KEY: ${APP_KEY}
+      - APP_KEY: mi1S8/HyK4SHHgeen56M0sm/MBEOIoTljJAT1auBILM=
       - DB_CONNECTION: mysql_testing
       - MYSQL_ALLOW_EMPTY_PASSWORD: true
 
-    working_directory: ./matching
+    working_directory: ~/src
 
     steps:
       - checkout
@@ -46,13 +46,11 @@ jobs:
           key: v1-dependencies-{{ checksum "composer.json" }}
 
       # run seeding
-      # - run:
-      #     working_directory: ./matching
-      #     command: php artisan migrate
+      - run:
+          command: php artisan migrate
 
-      # - run:
-      #     working_directory: ./matching
-      #     command: php artisan db:seed
+      - run:
+          command: php artisan db:seed
 
       # run tests!
       - run: php ./vendor/bin/phpunit
