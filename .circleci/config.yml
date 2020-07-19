@@ -47,10 +47,10 @@ jobs:
 
       # run seeding
       - run:
-        command: php artisan migrate
+          command: php artisan migrate
 
       - run:
-        command: php artisan db:seed
+          command: php artisan db:seed
 
       # run tests!
       - run: php ./vendor/bin/phpunit
