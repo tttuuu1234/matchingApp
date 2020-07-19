@@ -38,12 +38,14 @@ jobs:
       #     # fallback to using the latest cache if no exact match is found
       #     - v1-dependencies-
 
-      # - run: composer install -n --prefer-dist
+      - run: 
+          WORKDIR: ./matching
+          command: composer install -n --prefer-dist
 
       # - save_cache:
       #     paths:
       #       - ./matching/vendor
-          # key: v1-dependencies-{{ checksum "composer.json" }}
+      #     key: v1-dependencies-{{ checksum "composer.json" }}
 
       # run seeding
       - run:
