@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/php:7.2.1-apache-node-browsers
+      - image: circleci/php:7.2-apache-node-browsers
       - image: circleci/mysql:5.7
 
       # Specify service dependencies here if necessary
@@ -15,11 +15,12 @@ jobs:
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/mysql:9.4
 
+    env_file: .env.testing
     environment:
       - APP_DEBUG: true
       - APP_ENV: testing
-      - APP_KEY: APP_KEYを入れてください
-      - DB_CONNECTION: circle_test
+      - APP_KEY: ${APP_KEY}
+      - DB_CONNECTION: ${DB_CONNECTION}
       - MYSQL_ALLOW_EMPTY_PASSWORD: true
 
     working_directory: ~/repo
